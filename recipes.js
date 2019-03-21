@@ -27,31 +27,31 @@ mongoose.connect('mongodb://localhost/recipeApp')
   const Recipe = mongoose.model('recipe', recipeSchema)
 
   
-  // const bestPizzaEver = new Recipe({
-  //   title: 'Pineapple Pizza',
-  //   level: 'Easy Peasy',
-  //   ingredients: [ 'dough', 'pineapple', 'tomato sauce', 'ham', 'mozzarella cheese'],
-  //   cuisine: 'italo-american',
-  //   dishType: 'Snack',
-  //   image: 'https://d2gk7xgygi98cy.cloudfront.net/1374-3-large.jpg',
-  //   duration: '1',
-  //   creator: 'Genius' 
-  // })
+  const bestPizzaEver = new Recipe({
+    title: 'Pineapple Pizza',
+    level: 'Easy Peasy',
+    ingredients: [ 'dough', 'pineapple', 'tomato sauce', 'ham', 'mozzarella cheese'],
+    cuisine: 'italo-american',
+    dishType: 'Snack',
+    image: 'https://d2gk7xgygi98cy.cloudfront.net/1374-3-large.jpg',
+    duration: '1',
+    creator: 'Genius' 
+  })
 
-  // bestPizzaEver.save(err => {
-  //   console.log(err)
-  // })
+  bestPizzaEver.save(err => {
+    console.log(err)
+  })
 
-  // Recipe.insertMany(data).then(documents => {
+  Recipe.insertMany(data).then(documents => {
     
-  //   console.log(documents)
-  // })
-  // .catch(err => console.log(err))
+    console.log(documents)
+  })
+  .catch(err => console.log(err))
   
 
-  // Recipe.updateOne({ title: "Rigatoni alla Genovese"}, { duration: 100 })
-  // .then(console.log('well done!'))
-  // .catch(console.log('something went wrong'));
+  Recipe.updateOne({ title: "Rigatoni alla Genovese"}, { duration: 100 })
+  .then(console.log('well done!'))
+  .catch(console.log('something went wrong'));
 
 
   Recipe.deleteOne({ title: "Carrot Cake"})
