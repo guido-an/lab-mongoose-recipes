@@ -54,16 +54,13 @@ mongoose.connect('mongodb://localhost/recipeApp')
   .catch(console.log('something went wrong'));
 
 
-  Recipe.deleteOne({ title: "Carrot Cake"})
-  .then(document => console.log("olè"))
+Recipe.deleteOne({ title: "Carrot Cake"})
+  .then(() => console.log("document deleted"))
   // .catch(err => console.log(err))
   .then(() => {
     return mongoose.connection.close()
   })
-  .then(() => {
-    return Promise.reject(40)
-  })
-  .then((value) => console.log(value))
+
   .catch(err => console.log('err' + err))
 
   
